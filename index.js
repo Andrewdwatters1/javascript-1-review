@@ -27,6 +27,7 @@ outerFuncReference2()
 
 //scope
 var globalScopeVariable = 'I am a string that is in the global scope'
+
 function scopeChecker() {
   var scopeCheckerVar = 'I am at the top of the function scope'
   function innerScopeFunction() {
@@ -39,13 +40,15 @@ function scopeChecker() {
   }
   innerScopeFunction()
 }
+
 scopeChecker()
 
+
+//Lexical Scope
 function lexicalExample() {
   var someVariable = 'Hello'
-  console.log('some variable in lexical', someVariable)
+
   function variableChanger() {
-    console.log('some variable in variable changer', someVariable)
     var someVariable = 'Not hello'
   }
   variableChanger()
@@ -57,11 +60,11 @@ lexicalExample()
 if(true) {
   let john = 'John'
 }
-console.log('john', john)
+
 if(true) {
   var john = 'John'
 }
-console.log('john', john)
+
 
 //variables
 //var is a keyword.. you use to it to assign labels and values
@@ -90,4 +93,13 @@ if(trueChecker) {
 
 if(!trueChecker) {
   console.log('Even though true checker is true, the bang checks for the opposite. So this is really checking to see if trueChecker is false.')
+}
+
+var num = 4;
+var num2 = 5;
+
+var added = num + num2;
+
+if(added) {
+  console.log('added evaluates to true', added)
 }
