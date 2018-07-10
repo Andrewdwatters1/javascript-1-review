@@ -11,30 +11,45 @@ var funcExpression = function() {
   console.log('I am the func expression')
 }
 
-
-function outerFunc(name) {
+//returning a function from a function
+function outerFunc() {
   function innerFunc() {
-    console.log('Hello, ' + name)
+    console.log('Hello')
   }
   return innerFunc;
+
 }
 
-var outerFuncReference = outerFunc('John')
-var outerFuncReference2 = outerFunc('James')
+var outerFuncReference = outerFunc()
+var outerFuncReference2 = outerFunc()
 
 outerFuncReference()
 outerFuncReference2()
+
+//callbacks (passing a function to another function to use)
+function test(cb) {
+  return cb()
+}
+
+function hello() {
+  console.log('hello')
+}
+test(hello)
 
 //scope
 var globalScopeVariable = 'I am a string that is in the global scope'
 
 function scopeChecker() {
+
   var scopeCheckerVar = 'I am at the top of the function scope'
+
   function innerScopeFunction() {
+
     var innerScopeVariable = 'I am a string that is in local scope'
+
     function evenMoreInnerScopeFunction() {
-      console.log('Inner scope check', innerScopeVariable, scopeCheckerVar, globalScopeVariable)
       var innerInnerVariable = 'I am at the bottom of the scope tree'
+      console.log('Inner scope check', innerScopeVariable, scopeCheckerVar, globalScopeVariable)
     }
     evenMoreInnerScopeFunction()
   }
@@ -44,11 +59,14 @@ function scopeChecker() {
 scopeChecker()
 
 
-//Lexical Scope
+// Lexical Scope
+var someVariable = 'hello'
+
 function lexicalExample() {
   var someVariable = 'Hello'
 
   function variableChanger() {
+    // console.log('Some variable', someVariable)
     var someVariable = 'Not hello'
   }
   variableChanger()
@@ -56,25 +74,25 @@ function lexicalExample() {
 lexicalExample()
 
 
-//Let keyword and block scope
+// //Let keyword and block scope
 if(true) {
   let john = 'John'
 }
-
+console.log(john, 'john')
 if(true) {
   var john = 'John'
 }
 
 
-//variables
-//var is a keyword.. you use to it to assign labels and values
-//Variables must start with $, _, or a letter not a number
-var num = 1;
-var string = 'Hello'
-var boolean = true;
-var noValue = null;
-var undefinedValue = undefined;
-var notANumber = NaN;
+// //variables
+// //var is a keyword.. you use to it to assign labels and values
+// //Variables must start with $, _, or a letter not a number
+var num = 1; //Number
+var string = 'Hello' //String
+var boolean = true; //Boolean
+var noValue = null; //Null
+var undefinedValue = undefined; //undefined
+var notANumber = NaN; //Technically a Number
 
 //if statements
 if(true) {
