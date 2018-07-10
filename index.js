@@ -78,10 +78,10 @@ lexicalExample()
 if(true) {
   let john = 'John'
 }
-console.log(john, 'john')
 if(true) {
   var john = 'John'
 }
+console.log(john, 'john')
 
 
 // //variables
@@ -95,6 +95,13 @@ var undefinedValue = undefined; //undefined
 var notANumber = NaN; //Technically a Number
 
 //if statements
+//Some examples of falsy values
+//null
+//undefined
+//false 
+//0
+//NaN
+//''
 if(true) {
   console.log('I will always fire no matter what')
 }
